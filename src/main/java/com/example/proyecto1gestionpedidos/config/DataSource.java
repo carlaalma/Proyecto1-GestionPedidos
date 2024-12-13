@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @Configuration
-public class DataSourceConfig {
+public class DataSource {
     @Bean
     @ConfigurationProperties("spring.datasource.hikari")
     public HikariDataSource dataSource() {
