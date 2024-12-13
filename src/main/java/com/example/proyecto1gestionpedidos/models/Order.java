@@ -14,5 +14,4 @@ public class Order {
     private Long id;
     private String description;
     private Double amount;
-
 }

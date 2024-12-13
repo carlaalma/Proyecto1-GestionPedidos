@@ -10,7 +10,8 @@ import com.example.proyecto1gestionpedidos.models.Order;
 public class OrderService {
     @Autowired
     private OrderRepository orderRepository;
-    @Transactional
+
+    @Transactional(rollbackFor = Exception.class)
     public Order createOrder(Order order) {
         return orderRepository.save(order);
     }
