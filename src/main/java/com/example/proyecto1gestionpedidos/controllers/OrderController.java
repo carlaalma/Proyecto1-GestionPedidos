@@ -1,6 +1,6 @@
 package com.example.proyecto1gestionpedidos.controllers;
 
-import com.example.proyecto1gestionpedidos.models.Order;
+import com.example.proyecto1gestionpedidos.models.Pedido;
 import com.example.proyecto1gestionpedidos.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,13 +13,15 @@ public class OrderController {
     private OrderService orderService;
 
     @PostMapping
-    public Order createOrder(@RequestBody Order order) {
-        return orderService.createOrder(order);
-    }
-    @GetMapping
-    public Iterable<Order> getAllOrders() {
-        return orderService.findAllOrders();
+    public Pedido createOrder(@RequestBody Pedido pedido) {
+        System.out.println("Descripción: " + pedido.getDescription());
+        System.out.println("Cantidad: " + pedido.getAmount());
+        return orderService.createOrder(pedido);
     }
 
+    @GetMapping
+    public Iterable<Pedido> getAllOrders() {
+        return orderService.findAllOrders();
+    }
 
 }
