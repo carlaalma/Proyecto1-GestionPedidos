@@ -14,6 +14,9 @@ public class Pedido {
     @Column(nullable = false)
     private Double amount;
 
+    public Pedido() {
+    }
+
     public Long getId() {
         return id;
     }
@@ -35,6 +38,12 @@ public class Pedido {
     }
 
     public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    public Pedido(Long id, String description, Double amount) {
+        this.id = id;
+        this.description = description;
         this.amount = amount;
     }
 }

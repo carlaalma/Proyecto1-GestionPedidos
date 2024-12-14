@@ -20,14 +20,13 @@ public class OrderService {
         return orderRepository.findAll();
     }
     @Transactional(rollbackFor = Exception.class)
-    public void updateOrder(Pedido pedido) throws Exception {
+    public  void updateOrder(Pedido pedido) throws Exception {
         orderRepository.save(pedido);
         if (someConditionFails()) {
             throw new Exception("Simulated error");
         }
     }
     private boolean someConditionFails() {
-        // Simula una condición que falla
         return true;
     }
 }
